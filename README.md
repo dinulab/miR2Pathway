@@ -81,7 +81,7 @@ An example for the matrix of name.genelist:
     <th>10357</th>
     <th>10431</th>
     <th>136542</th>
-    <th>145363>/th>
+    <th>145363</th>
   </tr>
    <tr>
     <td>Sample1 </td>
