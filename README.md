@@ -5,7 +5,7 @@ miR2Pathway is a PageRank-based method that can be used to rank disease risk of 
 
 Chaoxing Li and Valentin Dinu. “miR2Pathway: A Novel Analytical Method to Discover MicroRNA-mediateding Dysregulated Pathways Involved in Disease”, 2017.
 
-Original website: http://dinulab.org/tools/mir2pathway/
+Main website: http://dinulab.org/tools/mir2pathway/
 
 <b> R code, sample data and sample scripts: </b>
 
