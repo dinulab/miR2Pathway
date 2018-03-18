@@ -39,7 +39,7 @@ library(graph) <br>
 library(igraph) <br>
 
 
-<code> results<-miR2Pathway(mydata.gene=mydata.gene,mydata.miR=mydata.miR,genelist=genelist,name.genelist=name.genelist,miRlist=miRlist,miRlist.full=miRlist.full,N.miR=1046,N.gene=20531,N.path=5,Num.sample.normal=7,Num.sample.case=7,Pathway.database=humanKEGG,cor.cutoff=-0.4,N.parallel=4)<code> 
+<code> results<-miR2Pathway(mydata.gene=mydata.gene,mydata.miR=mydata.miR,genelist=genelist,name.genelist=name.genelist,miRlist=miRlist,miRlist.full=miRlist.full,N.miR=1046,N.gene=20531,N.path=5,Num.sample.normal=7,Num.sample.case=7,Pathway.database=humanKEGG,cor.cutoff=-0.4,N.parallel=4)</code> 
    
    
 
