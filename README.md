@@ -10,12 +10,15 @@ Original website: http://dinulab.org/tools/mir2pathway/
 R code, sample data and sample scripts: 
 
 miR2Pathway.R
+
 The R script to perform miR2Pathway
 
 miR2Pathway-example.R
+
 Example usage of miR2Pathway.R
 
 miR2Pathway-example-data.Rdata
+
 Data used in miR2Pathway-example.R
 
 # Usage
