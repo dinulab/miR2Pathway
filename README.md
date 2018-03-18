@@ -7,7 +7,7 @@ Chaoxing Li and Valentin Dinu. “miR2Pathway: A Novel Analytical Method to Disc
 
 Original website: http://dinulab.org/tools/mir2pathway/
 
-</b> R code, sample data and sample scripts: </b>
+<b> R code, sample data and sample scripts: </b>
 
 miR2Pathway.R
 
