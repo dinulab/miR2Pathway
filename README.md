@@ -68,15 +68,35 @@ LengthOfPathway: gene counts of pathways.
 # Examples
 
 See miR2Pathway-example.R
-
 An example for the matrix of name.genelist:
+<html>
 
-  100130426      100133144      100134869      10357   10431   136542
+<body>
 
-  Sample1       0            0               0            0         0        0
+<table>
+   <tr>
+    <th>100130426</th>
+    <th>100133144</th>
+    <th>100134869</th>
+    <th>10357</th>
+    <th>10431</th>
+    <th>136542</th>
+  </tr>
+   <tr>
+    <td>Sample1 </td>
+    <td>0 </td>
+      <td>0 </td>
+      <td>0 </td>
+      <td>0 </td>
+      <td>0 </td>
+      <td>0 </td>
+  </tr>
+</table>
+
+</body>
+</html>
 
  
-
 # Credits
 
 Authors: Chaoxing Li and Valentin Dinu
