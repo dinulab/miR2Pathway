@@ -9,17 +9,17 @@ Main website: http://dinulab.org/tools/mir2pathway/
 
 <b> R code, sample data and sample scripts: </b>
 
-<code> The R script to perform miR2Pathway: </code>  miR2Pathway.R
+<samp> The R script to perform miR2Pathway: </samp>  miR2Pathway.R
 
-<code> Example usage of miR2Pathway.R: </code> miR2Pathway-example.R
+<samp> Example usage of miR2Pathway.R: </samp> miR2Pathway-example.R
 
-<code> Data used in miR2Pathway-example.R: </code> miR2Pathway-example-data.Rdata
+<samp> Data used in miR2Pathway-example.R: </samp> miR2Pathway-example-data.Rdata
 
 
 
 # Usage
 
-miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,miRlist.full,N.miR,N.gene,N.path,Num.sample.normal,Num.sample.case,Pathway.database,cor.cutoff,N.parallel)
+<code> miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,miRlist.full,N.miR,N.gene,N.path,Num.sample.normal,Num.sample.case,Pathway.database,cor.cutoff,N.parallel) </code>
 
 # Arguments
 
