@@ -23,24 +23,23 @@ Data used in miR2Pathway-example.R: <samp> <br>   miR2Pathway-example-data.Rdata
    
 <b> Example Usage (to be used with example data) </b>  
 
+library(compiler) <br>
+library(foreach) <br>
+library(iterators) <br>
+library(parallel) <br>
+library(doParallel) <br>
+library(AnnotationDbi) <br>
+library(stats4) <br>
+library(BiocGenerics) <br>
+library(miRNAtap)  <br>
+library(miRNAtap.db)  <br>
+library(graphite) <br>
+library(BiocGenerics) <br>
+library(graph) <br>
+library(igraph) <br>
 
-library(compiler) 
-library(foreach) 
-library(iterators)
-library(parallel)
-library(doParallel)
-library(AnnotationDbi)
-library(stats4)
-library(BiocGenerics)
-library(miRNAtap) 
-library(miRNAtap.db) 
-library(graphite)
-library(BiocGenerics)
-library(graph)
-library(igraph)
 
-
-<code> results<-miR2Pathway(mydata.gene=mydata.gene,mydata.miR=mydata.miR,genelist=genelist,name.genelist=name.genelist,miRlist=miRlist,miRlist.full=miRlist.full,N.miR=1046,N.gene=20531,N.path=5,Num.sample.normal=7,Num.sample.case=7,Pathway.database=humanKEGG,cor.cutoff=-0.4,N.parallel=4) <code> 
+<code> results<-miR2Pathway(mydata.gene=mydata.gene,mydata.miR=mydata.miR,genelist=genelist,name.genelist=name.genelist,miRlist=miRlist,miRlist.full=miRlist.full,N.miR=1046,N.gene=20531,N.path=5,Num.sample.normal=7,Num.sample.case=7,Pathway.database=humanKEGG,cor.cutoff=-0.4,N.parallel=4)<code> 
    
    
 
