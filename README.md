@@ -22,12 +22,48 @@ Original website: http://dinulab.org/tools/mir2pathway/
 miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,miRlist.full,N.miR,N.gene,N.path,Num.sample.normal,Num.sample.case,Pathway.database,cor.cutoff,N.parallel)
 
 # Arguments
-mydata.gene: 	a gene expression dataset (matrix). Rows represent genes, and columns represent samples (from control to case).
-mydata.miR: 	a miRNA expression dataset (matrix). Rows represent miRNAs, and columns represent samples (from control to case)
-genelist: 	a list of gene names (e.g., gene symobol).
-name.genelist: 	a matrix of gene expression dataset (The order of gene names must be consistent with genelist). This matrix is 1*N, where N is the number of genes. The value of each element could be a ramdom value. See an example in Examples Section.
-miRlist: 	miRNA in a standard format
-miRlist.full: 	the full name of all miRNAs.
+
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<table>
+   <tr>
+    <td>mydata.gene</td>
+    <td>a gene expression dataset (matrix). Rows represent genes, and columns represent samples (from control to case).</td>
+  </tr>
+  <tr>
+    <td>mydata.miR</td>
+    <td>a miRNA expression dataset (matrix). Rows represent miRNAs, and columns represent samples (from control to case).</td>
+  </tr>
+  <tr>
+    <td>genelist</td>
+    <td>a list of gene names (e.g., gene symobol).</td>
+  </tr>
+  <tr>
+    <td>name.genelist</td>
+    <td>a matrix of gene expression dataset (The order of gene names must be consistent with genelist). This matrix is 1*N, where N is the number of genes. The value of each element could be a ramdom value. See an example in Examples Section. </td>
+  </tr>
+  <tr>
+    <td>miRlist</td>
+    <td>miRNA in a standard format</td>
+  </tr>
+  <tr>
+    <td>miRlist.full</td>
+    <td>the full name of all miRNAs.</td>
+  </tr>
+</table>
+
+</body>
+</html>
+
+  
 
 # Value
 
