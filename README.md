@@ -100,13 +100,13 @@ An example for the matrix of name.genelist:
  
 # Credits
 
-Authors: Chaoxing Li and Valentin Dinu
+<b> Authors: </b> Chaoxing Li and Valentin Dinu
 
-If you use or modify the code, please cite:
+<b> If you use or modify the code, please cite: </b>
 
 “miR2Pathway: A Novel Analytical Method to Discover MicroRNA-mediateding Dysregulated Pathways Involved in Disease”, 2017.
 
-Issues?
+<b> Issues? </b>
 
 Please email Chaoxing Li <chaoxing@asu.edu> or Valentin Dinu <Valentin.Dinu@asu.edu> if you have any questions, concerns or feedback.
 
