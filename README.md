@@ -9,11 +9,11 @@ Main website: http://dinulab.org/tools/mir2pathway/
 
 <b> R code, sample data and sample scripts: </b>
 
-<var> The R script to perform miR2Pathway: </var>  miR2Pathway.R
+<code> The R script to perform miR2Pathway: </code>  miR2Pathway.R
 
-<var> Example usage of miR2Pathway.R: </var> miR2Pathway-example.R
+<code> Example usage of miR2Pathway.R: </code> miR2Pathway-example.R
 
-<var> Data used in miR2Pathway-example.R: </var> miR2Pathway-example-data.Rdata
+<code> Data used in miR2Pathway-example.R: </code> miR2Pathway-example-data.Rdata
 
 
 
