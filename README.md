@@ -1,7 +1,7 @@
 # miR2Pathway
 miR2Pathway is a PageRank-based method that can be used to rank disease risk of miRNA-mediated biological pathways. miR2Pathway can help explore how much miRNAs differentially influence the activity of biological pathways between two classes of phenotypes.
 
-For information about the method, please read:
+<b> For information about the method, please read: </b>
 
 Chaoxing Li and Valentin Dinu. “miR2Pathway: A Novel Analytical Method to Discover MicroRNA-mediateding Dysregulated Pathways Involved in Disease”, 2017.
 
@@ -9,17 +9,13 @@ Original website: http://dinulab.org/tools/mir2pathway/
 
 <b> R code, sample data and sample scripts: </b>
 
-miR2Pathway.R
+<u> The R script to perform miR2Pathway: </u> miR2Pathway.R
 
-The R script to perform miR2Pathway
+<u> Example usage of miR2Pathway.R: </u> miR2Pathway-example.R
 
-miR2Pathway-example.R
+<u> Data used in miR2Pathway-example.R </u> miR2Pathway-example-data.Rdata
 
-Example usage of miR2Pathway.R
 
-miR2Pathway-example-data.Rdata
-
-Data used in miR2Pathway-example.R
 
 # Usage
 
