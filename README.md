@@ -83,16 +83,27 @@ library(igraph) <br>
 
 # Value
 
-T.score: the total differential influence of all the miRNAs on the activity of a single pathway between control and case.
+<html>
+<body>
 
-LengthOfPathway: gene counts of pathways.
+<table>
+   <tr>
+    <td>T.score</td>
+     <td>The total differential influence of all the miRNAs on the activity of a single pathway between control and case</td>
+   </tr>
+   <td>LengthOfPathway</td>
+   <td>gene counts of pathways</td>
+</table>
+
+</body>
+</html>      
+       
 
 # Examples
 
 See miR2Pathway-example.R <br>
 An example for the matrix of name.genelist:
 <html>
-
 <body>
 
 <table>
