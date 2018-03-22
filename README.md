@@ -19,8 +19,7 @@ Data used in miR2Pathway-example.R: <samp> <br>   miR2Pathway-example-data.Rdata
 
 # Usage
 
-<code> miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,miRlist.full,N.miR,N.gene,N.path,Num.sample.normal,Num.sample.case,Pathway.database,cor.cutoff,N.parallel) </code>
-   
+  
 <b> Example Usage (to be used with example data) </b>  
 
 library(compiler) <br>
@@ -44,6 +43,8 @@ library(igraph) <br>
    
 
 # Arguments
+
+<code> miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,miRlist.full,N.miR,N.gene,N.path,Num.sample.normal,Num.sample.case,Pathway.database,cor.cutoff,N.parallel) </code>
 
 <html>
 
