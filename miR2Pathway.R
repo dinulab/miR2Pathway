@@ -1,4 +1,3 @@
-
 miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,miRlist.full,N.miR,N.gene,N.path,Num.sample.normal,Num.sample.case,Pathway.database,cor.cutoff,N.parallel){
   
   require(compiler) 
@@ -348,3 +347,4 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
   }
   return(list(T.score=PR.path.sum,LengthOfPathway=length.pathway))
 }
+
