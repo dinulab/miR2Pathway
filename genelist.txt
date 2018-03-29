@@ -1,5 +1,5 @@
 genelist
-TP53
-PIK3CA
-EGFR
-ATM
+KIF3B
+SP4
+DEF8
+USP9X
