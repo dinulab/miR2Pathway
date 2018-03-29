@@ -39,7 +39,7 @@ library(igraph) <br>
 
 
 <code>
-
+  
 genelist <- read.table("genelist.txt", header = TRUE, sep = "\t")
 miRlist <- read.table("miRlist.txt", header = TRUE, sep = "\t")
 miRlist.full <- read.table("miRlist.full", header = TRUE, sep = "\t")
@@ -57,7 +57,12 @@ rownames(mydata.miR2) <- mydata.miR[,1]
 names.genelist2 <- names.genelist[,-1]
 rownames(names.genelist2) <- names.genelist[,1]
 
+</code> 
+
+<code>
+  
 results<-miR2Pathway(mydata.gene=mydata.gene2,mydata.miR=mydata.miR2,genelist=genelist,name.genelist=names.genelist2,miRlist=miRlist,miRlist.full=miRlist.full,N.miR=4,N.gene=4,N.path=4,Num.sample.normal=4,Num.sample.case=4,Pathway.database=humanKEGG,cor.cutoff=-0.4,N.parallel=4)  
+
 </code> 
    
    
