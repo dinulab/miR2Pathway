@@ -1,0 +1,9 @@
+samples	TP53	PIK3CA	EGFR	ATM
+sample1	50	78	87	80
+sample2	70	87	64	55
+sample3	90	96	41	30
+sample4	110	105	18	5
+sample5	130	114	4	32
+sample6	150	123	124	74
+sample7	170	132	54	33.6
+sample8	190	141	53	30
