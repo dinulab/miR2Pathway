@@ -38,22 +38,22 @@ library(graph) <br>
 library(igraph) <br>
 
 
-<code>genelist <- read.table("genelist.txt", header = TRUE, sep = "\t")</code>
-<code>miRlist <- read.table("miRlist.txt", header = TRUE, sep = "\t")</code>
-<code>miRlist.full <- read.table("miRlist.full", header = TRUE, sep = "\t")</code>
+<code>genelist <- read.table("genelist.txt", header = TRUE, sep = "\t")</code><br>
+<code>miRlist <- read.table("miRlist.txt", header = TRUE, sep = "\t")</code><br>
+<code>miRlist.full <- read.table("miRlist.full", header = TRUE, sep = "\t")</code><br>
 
-<code>mydata.miR <- read.table("mydata.miR", header = TRUE, sep = "\t")</code>
-<code>names.genelist <- read.table("names.genelist", header = TRUE, sep = "\t")</code>
-<code>mydata.gene <- read.table("mydata.gene", header = TRUE, sep = "\t")</code>
+<code>mydata.miR <- read.table("mydata.miR", header = TRUE, sep = "\t")</code><br>
+<code>names.genelist <- read.table("names.genelist", header = TRUE, sep = "\t")</code><br>
+<code>mydata.gene <- read.table("mydata.gene", header = TRUE, sep = "\t")</code><br>
 
-<code>mydata.gene2 <- mydata.gene[,-1]</code>
-<code>rownames(mydata.gene2) <- mydata.gene[,1]</code>
+<code>mydata.gene2 <- mydata.gene[,-1]</code><br>
+<code>rownames(mydata.gene2) <- mydata.gene[,1]</code><br>
 
-<code>mydata.miR2 <- mydata.miR[,-1]</code>
-<code>rownames(mydata.miR2) <- mydata.miR[,1]</code>
+<code>mydata.miR2 <- mydata.miR[,-1]</code><br>
+<code>rownames(mydata.miR2) <- mydata.miR[,1]</code><br>
 
-<code>names.genelist2 <- names.genelist[,-1]</code>
-<code>rownames(names.genelist2) <- names.genelist[,1]</code>
+<code>names.genelist2 <- names.genelist[,-1]</code><br>
+<code>rownames(names.genelist2) <- names.genelist[,1]</code><br>
  
 
 <code>results<-miR2Pathway(mydata.gene=mydata.gene2,mydata.miR=mydata.miR2,genelist=genelist,name.genelist=names.genelist2,miRlist=miRlist,miRlist.full=miRlist.full,N.miR=4,N.gene=4,N.path=4,Num.sample.normal=4,Num.sample.case=4,Pathway.database=humanKEGG,cor.cutoff=-0.4,N.parallel=4)</code> 
