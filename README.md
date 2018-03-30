@@ -13,7 +13,7 @@ The R script to perform miR2Pathway: <samp>   <br> miR2Pathway.R</samp>
 
 Example usage of miR2Pathway.R: <samp> <br>   miR2Pathway-example.R</samp>
 
-Data used in miR2Pathway-example.R: <samp> <br>   miR2Pathway-example-data.Rdata</samp>
+Data used in miR2Pathway-example.R: <samp> <br>   miR2Pathway_Example_Dataset.RData</samp>
 
 
 
@@ -37,6 +37,7 @@ library(BiocGenerics) <br>
 library(graph) <br>
 library(igraph) <br>
 
+If you wish, you may download the example datasset files individually and run the code below to pre-process them <br>
 
 <code>genelist <- read.table("genelist.txt", header = TRUE, sep = "\t")</code><br>
 <code>miRlist <- read.table("miRlist.txt", header = TRUE, sep = "\t")</code><br>
@@ -55,6 +56,7 @@ library(igraph) <br>
 <code>names.genelist2 <- names.genelist[,-1]</code><br>
 <code>rownames(names.genelist2) <- names.genelist[,1]</code><br>
  
+Or you may simply load the workspace file: miR2Pathway_Example_Dataset.RData <br>
 
 <code>results<-miR2Pathway(mydata.gene=mydata.gene2,mydata.miR=mydata.miR2,genelist=genelist,name.genelist=names.genelist2,miRlist=miRlist,miRlist.full=miRlist.full,N.miR=4,N.gene=4,N.path=4,Num.sample.normal=4,Num.sample.case=4,Pathway.database=humanKEGG,cor.cutoff=-0.4,N.parallel=4)</code> 
    
