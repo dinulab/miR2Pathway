@@ -74,6 +74,11 @@ library(igraph) <br>
     <td>a gene expression dataset (matrix). Rows represent genes, and columns represent samples (from control to case).</td>
   </tr>
   <tr>
+   <tr>
+    <td>mydata.gene</td>
+    <td>a gene expression dataset (matrix). Rows represent genes, and columns represent samples (from control to case).</td>
+  </tr>
+  <tr>
     <td>mydata.miR</td>
     <td>a miRNA expression dataset (matrix). Rows represent miRNAs, and columns represent samples (from control to case).</td>
   </tr>
@@ -107,8 +112,8 @@ library(igraph) <br>
 
 <table>
    <tr>
-    <td>T.score</td>
-     <td>The total differential influence of all the miRNAs on the activity of a single pathway between control and case</td>
+    <th>Object</th>
+     <th>Description</th>
    </tr>
    <td>LengthOfPathway</td>
    <td>gene counts of pathways</td>
