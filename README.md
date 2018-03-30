@@ -111,11 +111,7 @@ library(igraph) <br>
 <body>
 
 <table>
-   <tr>
-    <th>Object</th>
-     <th>Description</th>
-   </tr>
-   <td>LengthOfPathway</td>
+    <td>LengthOfPathway</td>
    <td>gene counts of pathways</td>
 </table>
 
