@@ -37,7 +37,7 @@ library(BiocGenerics) <br>
 library(graph) <br>
 library(igraph) <br>
 
-<b>If you wish, you may download the example datasset files individually and run the code below to pre-process them <br> </b>
+<b>If you wish, you may download the example dataset files individually and run the code below to pre-process them <br> </b>
 
 <code>genelist <- read.table("genelist.txt", header = TRUE, sep = "\t")</code><br>
 <code>miRlist <- read.table("miRlist.txt", header = TRUE, sep = "\t")</code><br>
