@@ -69,6 +69,10 @@ library(igraph) <br>
 <body>
 
 <table>
+    <tr>
+    <th>Object</th>
+     <th>Description</th>
+   </tr>
    <tr>
     <td>mydata.gene</td>
     <td>a gene expression dataset (matrix). Rows represent genes, and columns represent samples (from control to case).</td>
@@ -111,7 +115,11 @@ library(igraph) <br>
 <body>
 
 <table>
-    <td>LengthOfPathway</td>
+    <tr>
+    <th>Object</th>
+    <th>Description</th>
+   </tr>
+   <td>LengthOfPathway</td>
    <td>gene counts of pathways</td>
 </table>
 
