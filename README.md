@@ -117,17 +117,18 @@ library(igraph) <br>
 <body>
 
 <table>
-    <tr>
+   <tr>
     <th>Object</th>
     <th>Description</th>
    </tr>
+  <td>T.score</td>
+  <td>the total differential influence of all the miRNAs on the activity of a single pathway between control and case</td>
    <td>LengthOfPathway</td>
    <td>gene counts of pathways</td>
 </table>
 
 </body>
 </html>      
-       
 
 # Examples
 
