@@ -56,7 +56,7 @@ library(igraph) <br>
 <code>names.genelist2 <- names.genelist[,-1]</code><br>
 <code>rownames(names.genelist2) <- names.genelist[,1]</code><br>
  
-<b>Or you may simply load the workspace file: miR2Pathway_Example_Dataset.RData <br></b>
+<b>Or you may simply load the workspace file: <code>load("miR2Pathway_Example_Dataset.RData)</code> <br></b>
 
 <code>results<-miR2Pathway(mydata.gene=mydata.gene2,mydata.miR=mydata.miR2,genelist=genelist,name.genelist=names.genelist2,miRlist=miRlist,miRlist.full=miRlist.full,N.miR=4,N.gene=4,N.path=4,Num.sample.normal=4,Num.sample.case=4,Pathway.database=humanKEGG,cor.cutoff=-0.4,N.parallel=4)</code> 
    
