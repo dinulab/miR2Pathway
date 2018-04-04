@@ -37,6 +37,8 @@ library(BiocGenerics) <br>
 library(graph) <br>
 library(igraph) <br>
 
+<code>humanKEGG <- pathways("hsapiens", "kegg")</code>
+
 <b>If you wish, you may download the example dataset files individually and run the code below to pre-process them <br> </b>
 
 <code>genelist <- read.table("genelist.txt", header = TRUE, sep = "\t")</code><br>
