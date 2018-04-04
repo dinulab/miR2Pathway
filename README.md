@@ -11,8 +11,6 @@ Main website: http://dinulab.org/tools/mir2pathway/
 
 The R script to perform miR2Pathway: <samp>   <br> miR2Pathway.R</samp>
 
-Example usage of miR2Pathway.R: <samp> <br>   miR2Pathway-example.R</samp>
-
 Data used in miR2Pathway_Example_Dataset.RData: <samp> <br>   miR2Pathway_Example_Dataset.RData</samp>
 
 
