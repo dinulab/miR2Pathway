@@ -1,3 +1,4 @@
+
 miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,miRlist.full,N.miR,N.gene,N.path,Num.sample.normal,Num.sample.case,Pathway.database,cor.cutoff,N.parallel){
   
   require(compiler) 
@@ -14,6 +15,9 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
   require(BiocGenerics)
   require(graph)
   require(igraph)
+  require(org.Hs.eg.db)
+  require(topGO)
+
   
   cl <- makeCluster(N.parallel)
   registerDoParallel(cl)
@@ -33,21 +37,57 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
   
   miRtarnetwork<-lapply(rep(0,N.miR),function(x) graph.empty(x,directed=FALSE))
   
-  for (i in 1:N.miR){
-    print(i)
-    targetgene<-getPredictedTargets(miRlist[i], species ="hsa", method = "geom", min_src = 2)
-    edgelist<-matrix()
-    targetgene.name<-rownames(targetgene)
-    length.miRtarget<-length(targetgene.name)
-    edgelist<-matrix(0,length.miRtarget,2)
-    edgelist[,1]<-miRlist.full[i]
-    edgelist[,2]<-targetgene.name
-    miRtarnetwork[[i]]<-graph_from_edgelist(edgelist,direct=FALSE)
-  }
-  print("miRtarnetwork step is done!!!")
+	##Order miRNA list
+	
+	miRlist.1 = as.data.frame(miRlist)
+	miRlist.2 = as.character(miRlist.1[order(miRlist.1$miRlist),])
+	print("miR2Pathway is now beginning the analysis")
+	
+	
+	##Use lapply with the getPredictedTargets function and save output to the targetgenes variable
+
+	targets <- function(w,x,y,z) {
+				  results = getPredictedTargets(w, species = x, method = y, min_src = z)
+				  return(results)
+	}
+	
+	targetgenes.1 <- lapply(miRlist.2, targets, 'hsa', 'geom', 2)
+
+	##Extract the rownames
+
+	targetgenes.2 <- lapply(targetgenes.1, rownames)
+
+	##Extract each dataframe from the targetgenes.2 object and concatentate into one numeric matrix
+
+	tg.name.1 = as.matrix(do.call(rbind, targetgenes.2))
+	columns = ncol(tg.name.1)
+	tg.name.2 = c(t(as.matrix(do.call(rbind, targetgenes.2))))
+	
+
+	##Replicate the sorted miRNAs so that their dimentions match those of the target genes 
+    miRlist.full.1 = as.data.frame(miRlist.full)
+	miRlist.full.2 = as.character(miRlist.full.1[order(miRlist.full.1$miRlist.full),])
+	
+	
+	miRlist.full.3 = rep(miRlist.full.2, columns)
+	miRlist.full.4 = as.data.frame(miRlist.full.3)
+	miRlist.full.5 = as.character(miRlist.full.4[order(miRlist.full.4$miRlist.full.3),])
+	
+	edgelist.1 <- as.matrix(miRlist.full.5)
+	edgelist.2 <- as.matrix(tg.name.2)
+
+	edgelist <- cbind(edgelist.1, edgelist.2)
+
+	##Create the edges 
+
+	miRtarnetwork <- graph_from_edgelist(edgelist,direct=FALSE)
+	print("The edges for the miRNAs have now been created")
+	print("The warning messages do not affect the analysis")
+ 
+   
   
   cor.normal1<-matrix(0,1,N.gene)
-  
+ 
   cor.normal<-foreach (i=1:N.miR, .combine="c") %dopar% {
     
     for (j in 1:N.gene){
@@ -62,7 +102,7 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
       
     }
     return(cor.normal1)
-  }
+  
   dim(cor.normal)=c(N.miR,N.gene)
   
   cor.normal.adj<-as.matrix(cor.normal)         #convert data.frame to matrix
@@ -119,7 +159,7 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
     cor.normal.adjacency.path[ is.na(cor.normal.adjacency.path)] <- 0
     cor.normal.adjacency.path[ is.nan(cor.normal.adjacency.path)] <- 0
     diag(cor.normal.adjacency.path) <- 0
-    
+ 
     path.interaction.normal<-graph.empty()
     
     path.interaction.normal<-graph.adjacency(cor.normal.adjacency.path,weighted=TRUE,mode="undirected")
@@ -170,8 +210,8 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
       }
     }
     return(amiRPath.normal)
-  }
-  
+  } 
+  } 
   ##Construct a miR-gene network for tumor
   
   cor.tumor1<-matrix(0,1,N.gene)
@@ -190,14 +230,14 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
       
     }
     return(cor.tumor1)
-  }
+  
   dim(cor.tumor)=c(N.miR,N.gene)
   
   cor.tumor.adj<-as.matrix(cor.tumor)        #convert data.frame to matrix
   
   ##convert a matrix into adjacency matrix for each pathway.
   
-  result2<-foreach (y=1:N.path, .combine="c") %dopar% {
+  result2 <- foreach (y=1:N.path, .combine="c") %dopar% {
     require(graphite)
     require(igraph)
     print(y)
@@ -207,6 +247,7 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
     KEGG.p0 <-Pathway.database[[y]]      
     KEGG.p <- convertIdentifiers(KEGG.p0, "entrez") 
     KEGG.g<-pathwayGraph(KEGG.p) 
+	
     KEGG.g1<-igraph.from.graphNEL(KEGG.g) 
     KEGG.g2<-graph_from_edgelist(get.edgelist(KEGG.g1),direct=FALSE)
     print(y)
@@ -229,14 +270,17 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
     
     cor.tumor.adj.path<-cor.tumor.adj[,loc] 
     
-    cor.tumor.adjacency.path<-matrix(2,(N.miR+length(loc)),(N.miR+length(loc)))
+    cor.tumor.adjacency.path <- matrix(2,(N.miR+length(loc)),(N.miR+length(loc)))
+	
+    #} } # I have placed two curly brackets here, the code is error free up to this point. Thus, the error is located in the next 4 lines of code
+    colnames(cor.tumor.adjacency.path)[(N.miR+1):(N.miR+length(loc))] <- names(name.genelist[loc])       
+    rownames(cor.tumor.adjacency.path)[(N.miR+1):(N.miR+length(loc))] <- names(name.genelist[loc]) 
+   #  }} # i have placed these here   
+    colnames(cor.tumor.adjacency.path)[1:N.miR] <- miRlist.full[1:N.miR]  
+    rownames(cor.tumor.adjacency.path)[1:N.miR] <- miRlist.full[1:N.miR] 
+  #  }} #I have placed two curly brackets here, if you remove the curly brackets above, you will see the error message
     
-    colnames(cor.tumor.adjacency.path)[(N.miR+1):(N.miR+length(loc))]<- names(name.genelist[loc])       
-    rownames(cor.tumor.adjacency.path)[(N.miR+1):(N.miR+length(loc))]<- names(name.genelist[loc]) 
-    colnames(cor.tumor.adjacency.path)[1:N.miR]<-miRlist.full[1:N.miR]  
-    rownames(cor.tumor.adjacency.path)[1:N.miR]<-miRlist.full[1:N.miR] 
-    
-    for (j in 1:N.miR){
+	for (j in 1:N.miR){
       cor.tumor.adjacency.path[j,(N.miR+1):(N.miR+length(loc))]<- cor.tumor.adj.path[j,]       ##length(loc) take over of length(nodes(KEGG.p0))
     }
     
@@ -258,7 +302,7 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
     miR.left<-V(miRPath.tumor.stat.miRlist)
     
     length.miR<-length(miR.left)
-    
+     # there is an error up to this point about columns
     if (length.miR==0){
       
       print(c("This pathway is not targeted by any miRNAs"))
@@ -293,7 +337,7 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
       }
     }
     return(amiRPath.tumor)
-  }
+  } 
   
   result3<-foreach (y=1:N.path, .combine="c") %dopar% {
     require(graphite)
@@ -346,5 +390,5 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
     PR.path.sum[y]<-sum(result3[,y])
   }
   return(list(T.score=PR.path.sum,LengthOfPathway=length.pathway))
-}
-
+ 
+}}
