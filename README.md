@@ -137,7 +137,7 @@ library(igraph) <br>
 
 # Examples
 
-See miR2Pathway-example.R <br>
+See miR2Pathway_Example_Dataset.RData <br>
 An example for the matrix of name.genelist:
 <html>
 <body>
