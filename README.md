@@ -112,7 +112,7 @@ library(igraph) <br>
 
   
 
-# Value
+# Values
 
 <html>
 <body>
