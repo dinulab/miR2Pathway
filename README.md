@@ -19,6 +19,7 @@ Data used in miR2Pathway_Example_Dataset.RData: <samp> <br>   miR2Pathway_Exampl
 
 # Usage
 
+<b> Please use miR2Pathway with R x64 3.5.0 Pre-release </b>
   
 <b> Example Usage (to be used with example data) </b>  
 
