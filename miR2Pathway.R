@@ -65,7 +65,7 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
 	
 
 	##Replicate the sorted miRNAs so that their dimentions match those of the target genes 
-    miRlist.full.1 = as.data.frame(miRlist.full)
+        miRlist.full.1 = as.data.frame(miRlist.full)
 	miRlist.full.2 = as.character(miRlist.full.1[order(miRlist.full.1$miRlist.full),])
 	
 	
@@ -272,14 +272,11 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
     
     cor.tumor.adjacency.path <- matrix(2,(N.miR+length(loc)),(N.miR+length(loc)))
 	
-    #} } # I have placed two curly brackets here, the code is error free up to this point. Thus, the error is located in the next 4 lines of code
     colnames(cor.tumor.adjacency.path)[(N.miR+1):(N.miR+length(loc))] <- names(name.genelist[loc])       
     rownames(cor.tumor.adjacency.path)[(N.miR+1):(N.miR+length(loc))] <- names(name.genelist[loc]) 
-   #  }} # i have placed these here   
     colnames(cor.tumor.adjacency.path)[1:N.miR] <- miRlist.full[1:N.miR]  
     rownames(cor.tumor.adjacency.path)[1:N.miR] <- miRlist.full[1:N.miR] 
-  #  }} #I have placed two curly brackets here, if you remove the curly brackets above, you will see the error message
-    
+     
 	for (j in 1:N.miR){
       cor.tumor.adjacency.path[j,(N.miR+1):(N.miR+length(loc))]<- cor.tumor.adj.path[j,]       ##length(loc) take over of length(nodes(KEGG.p0))
     }
@@ -302,7 +299,7 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
     miR.left<-V(miRPath.tumor.stat.miRlist)
     
     length.miR<-length(miR.left)
-     # there is an error up to this point about columns
+    
     if (length.miR==0){
       
       print(c("This pathway is not targeted by any miRNAs"))
