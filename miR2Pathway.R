@@ -18,7 +18,7 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
   require(org.Hs.eg.db)
   require(topGO)
 
-  
+  options(warn=-1)
   cl <- makeCluster(N.parallel)
   registerDoParallel(cl)
   getDoParWorkers()
@@ -81,8 +81,8 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
 	##Create the edges 
 
 	miRtarnetwork <- graph_from_edgelist(edgelist,direct=FALSE)
-	print("The edges for the miRNAs have now been created")
-	print("The warning messages do not affect the analysis")
+	print("The edges for the miRNAs have been created")
+	print("The results are ready, please use ls() to find the results object")
  
    
   
