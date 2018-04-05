@@ -139,28 +139,74 @@ library(igraph) <br>
 
 See miR2Pathway_Example_Dataset.RData <br>
 An example for the matrix of name.genelist:
+
 <html>
 <body>
 
 <table>
    <tr>
-    <th>100130426</th>
-    <th>100133144</th>
-    <th>100134869</th>
-    <th>10357</th>
-    <th>10431</th>
-    <th>136542</th>
-    <th>145363</th>
-  </tr>
+    <th>samples</th>
+    <th>KIF3B</th>
+    <th>SP4</th>
+    <th>DEF8</th>
+    <th>USP9X</th>
+   </tr>
    <tr>
-    <td>Sample1 </td>
-    <td>0 </td>
-      <td>0 </td>
-      <td>0 </td>
-      <td>0 </td>
-      <td>0 </td>
-      <td>0 </td>
-  </tr>
+    <td>sample1</td>
+    <td>50 </td>
+      <td>78</td>
+      <td>87</td>
+      <td>80</td>
+    </tr>
+    <tr>
+    <td>sample2</td>
+    <td>70</td>
+      <td>87</td>
+      <td>64</td>
+      <td>55</td>
+    </tr>
+    <tr>
+    <td>sample3</td>
+    <td>90</td>
+      <td>96</td>
+      <td>41</td>
+      <td>30</td>
+    </tr>
+   <tr>
+    <td>sample4</td>  	 	 	 
+    <td>110</td>
+      <td>105</td>
+      <td>18</td>
+      <td>5</td>
+    </tr>
+    <tr>
+    <td>sample5</td>  	 	 	 
+    <td>130</td>
+      <td>114</td>
+      <td>4</td>
+      <td>32</td>
+    </tr>
+    <tr>
+    <td>sample6</td>  	 	 	 
+    <td>150</td>
+      <td>123</td>
+      <td>124</td>
+      <td>74</td>
+    </tr>
+   <tr>
+    <td>sample7</td>  	 	 	 
+    <td>170</td>
+      <td>132</td>
+      <td>54</td>
+      <td>33</td>
+    </tr>
+   <tr>
+    <td>sample8</td>  	 	 	 
+    <td>190</td>
+      <td>141</td>
+      <td>53</td>
+      <td>30</td>
+    </tr>
 </table>
 
 </body>
