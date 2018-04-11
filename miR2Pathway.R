@@ -116,7 +116,6 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
     amiRPath.normal<-amiRPath
     
     KEGG.p0 <-Pathway.database[[y]]      
-	title.pathway[y] <- KEGG.p0@title
     KEGG.p <- convertIdentifiers(KEGG.p0, "entrez") 
     KEGG.g<-pathwayGraph(KEGG.p) 
     nodelist<-nodes(KEGG.g)
@@ -344,6 +343,7 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
     
     KEGG.p0 <-Pathway.database[[y]]      
     KEGG.p <- convertIdentifiers(KEGG.p0, "entrez") 
+	title.pathway[y] <- KEGG.p0@title
     KEGG.g<-pathwayGraph(KEGG.p) 
     KEGG.g1<-igraph.from.graphNEL(KEGG.g) 
     KEGG.g2<-graph_from_edgelist(get.edgelist(KEGG.g1),direct=FALSE)
