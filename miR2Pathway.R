@@ -1,4 +1,3 @@
-
 miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,miRlist.full,N.miR,N.gene,N.path,Num.sample.normal,Num.sample.case,Pathway.database,cor.cutoff,N.parallel){
   
   require(compiler) 
@@ -30,7 +29,7 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
   amiRPath.normal<-amiRPath
   amiRPath.tumor<-amiRPath
   length.pathway<-c()
-  
+  title.pathway<-c()
   humanReactome <- pathways("hsapiens", "reactome")
   humanBiocarta <- pathways("hsapiens", "biocarta")
   humanKEGG <- pathways("hsapiens", "kegg")
@@ -117,6 +116,7 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
     amiRPath.normal<-amiRPath
     
     KEGG.p0 <-Pathway.database[[y]]      
+	title.pathway[y] <- KEGG.p0@title
     KEGG.p <- convertIdentifiers(KEGG.p0, "entrez") 
     KEGG.g<-pathwayGraph(KEGG.p) 
     nodelist<-nodes(KEGG.g)
@@ -386,6 +386,7 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
   for (y in 1:length(Pathway.database)){
     PR.path.sum[y]<-sum(result3[,y])
   }
-  return(list(T.score=PR.path.sum,LengthOfPathway=length.pathway))
+  return(list(P.Values=cor.tumor, PathwayNames=title.pathway, T.score=PR.path.sum,LengthOfPathway=length.pathway))
  
-}}
+}
+}
