@@ -124,6 +124,14 @@ library(igraph) <br>
     <th>Description</th>
    </tr>
   <tr>
+  <td>P.Value</td>
+  <td>the p-value that resulted from the correlation test</td>
+  </tr>
+   <tr>
+  <td>Pathways</td>
+  <td>the reported pathways</td>
+  </tr>
+  <tr>
   <td>T.score</td>
   <td>the total differential influence of all the miRNAs on the activity of a single pathway between control and case</td>
   </tr>
