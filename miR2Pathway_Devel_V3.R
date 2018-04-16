@@ -392,10 +392,9 @@ miR2Pathway <- function(mydata.gene,mydata.miR,genelist,name.genelist,miRlist,mi
 	} 
 	return(PR.path.sum)
 	
-	
-  return(cor.tumor1)
+  
 }  
-write.table(sprintf("%.05f",cor.tumor1), "P_values.txt", sep=",", quote=F)
+write.table(sprintf("%.05f",cor.tumor), "P_values.txt", sep=",", quote=F)
 write.table(title.pathway, "Pathways.txt", sep=",", quote=F)
-Full_Results <- list(Pathways=title.pathway, P.Values=sprintf("%.05f",cor.tumor1))
+Full_Results <- list(Pathways=title.pathway, P.Values=sprintf("%.05f",cor.tumor))
 }
