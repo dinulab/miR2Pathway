@@ -82,10 +82,6 @@ library(igraph) <br>
     <td>a gene expression dataset (matrix). Rows represent genes, and columns represent samples (from control to case).</td>
   </tr>
   <tr>
-   <tr>
-    <td>mydata.gene</td>
-    <td>a gene expression dataset (matrix). Rows represent genes, and columns represent samples (from control to case).</td>
-  </tr>
   <tr>
     <td>mydata.miR</td>
     <td>a miRNA expression dataset (matrix). Rows represent miRNAs, and columns represent samples (from control to case).</td>
